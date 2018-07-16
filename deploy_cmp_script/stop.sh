@@ -1,9 +1,12 @@
 #!stop.sh
 #!/bin/bash
-cd /deploy_cmp_script
+
+echo "in stop sh"
+pwd
 echo "Stopping SpringBoot Application for CMP"
 ls
 pid=`ps -ef | grep jenkins-deploy-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}'`
+echo pid
 if [ -n "$pid" ]
 then
 #!kill -9 
